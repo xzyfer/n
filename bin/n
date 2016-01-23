@@ -54,6 +54,7 @@ fi
 #
 
 CURL_PARAMS=( "-L"
+              "-k"
               "-#")
 
 WGET_PARAMS=( "--no-check-certificate"
@@ -492,7 +493,7 @@ install() {
       | egrep ^$version \
       | tail -n1)
 
-    test $version || abort "invalid version ${1#v}"
+    test $version || abort "invalid version aaaa ${1#v}"
   fi
 
   local dir=${VERSIONS_DIR[$DEFAULT]}/$version
@@ -510,7 +511,7 @@ install() {
   log install ${BINS[$DEFAULT]}-v$version
 
   local url=$(tarball_url $version)
-  is_ok $url || abort "invalid version $version"
+  is_ok $url || abort "invalid version bbbb $version"
 
   log mkdir $dir
   mkdir -p $dir
